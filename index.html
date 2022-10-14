@@ -57,7 +57,47 @@
 									<p>As i love to take photos, there are my best ones. If you like them, leave a like on my Instagram.
                     Always makes me happy.
                   					</p>
-									<iframe src="https://dejvidnef.github.io/gallery/" frameborder="0" width="100%" height="750px"></iframe>
+									<head>
+										<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+										<script>
+											var button_beg = '<button id="button" class="button primary fit" onclick="showhide()">', button_end = '</button>';
+											var show_button = 'Open in this page', hide_button = 'Hide';
+											function showhide() {
+												var div = document.getElementById( "hide_show" );
+												var showhide = document.getElementById( "showhide" );
+												if ( div.style.display !== "none" ) {
+													div.style.display = "none";
+													button = show_button;
+													showhide.innerHTML = button_beg + button + button_end;
+												} else {
+													div.style.display = "block";
+													button = hide_button;
+													showhide.innerHTML = button_beg + button + button_end;
+												}
+											}
+											function setup_button( status ) {
+												if ( status == 'show' ) {
+													button = hide_button;
+												} else {
+													button = show_button;
+												}
+												var showhide = document.getElementById( "showhide" );
+												showhide.innerHTML = button_beg + button + button_end;
+											}
+											window.onload = function () {
+												setup_button( 'hide' );
+												showhide(); // if setup_button is set to 'show' comment this line
+											}
+										</script>
+										</head>
+										<body>
+											<div id="showhide"></div>
+											<div id="hide_show">
+												<iframe src="https://dejvidnef.github.io/gallery/"
+												frameborder="0" style="border: 0; border-radius: 1%" width="100%" height="750px" loading="lazy" allowfullscreen>
+												</iframe>
+											</div>
+										</body>
 								</header>
 							</article>
 							<article class="post featured">
